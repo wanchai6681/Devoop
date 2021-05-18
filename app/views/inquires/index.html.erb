@@ -1,0 +1,29 @@
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+<div class="card_from">
+<div class="card" style="width: 35rem;">
+  <a><h2> From </h2>
+  <div class="name">
+        <%= form_with url: send_text_path, method: :post do |form| %>
+        <%= form.label :name_user, "Name:",class:'title_user' %> <br> 
+        <%= form.text_field :name_user,class:'user' %>
+        <%= form.label :tel, "Telephone:",class:'title_user' %>
+        <%= form.text_field :tel,class:'user' %>
+        <%= form.label :message, "Message:",class:'title_user' %><br>
+        <%= form.text_area :message, size: "40x5" ,class:'user'%> 
+        <%= form.submit "submit",class: 'submit2',:value => "submit to email" %> 
+     <% end %>
+     </div>
+  </div>
+</div>
+</div>
+</div>
+</body>

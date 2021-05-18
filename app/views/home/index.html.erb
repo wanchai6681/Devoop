@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+    <% if user_signed_in? %>
+      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="/articles">Article</a></li>
+      <li class="active"><a href="/inquires">Inquires</a></li>
+    </ul>
+    <p class="navbar-text align = 'center'">
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <h1><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></h1>
+<% end %>
+</p>
+  </div>
+</nav>
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active ">
+      <img src="https://i.pinimg.com/originals/57/2c/41/572c412101100c0c7ee2b18931f4fbc7.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
